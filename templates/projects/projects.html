@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load humanize %}
 
 {% block content %}
 
@@ -19,9 +19,8 @@
                     {% for each in projects %}
                     <tr>
                         <th scope="row">{{ forloop.counter}}</th>
-                        <td> <a href="{% url 'project_detail' each.pk %}"> {{ each.title }} </a>  </td>
-                        <td>{{ each.created_at }}</td>
-                        <td>{{ each.id }}</td>
+                        <td> <a class="text-decoration-none" href="{% url 'project_detail' each.pk %}"> {{ each.title }} </a>  </td>
+                        <td>{{ each.created_at |naturaltime}}</td>
                     </tr>
                     {% endfor %}
                     {% endif %}

@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # django inbuild apps
+    'django.contrib.humanize',
+    # apps
     'projects',
 ]
 
