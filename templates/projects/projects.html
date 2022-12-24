@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 m-auto">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if projects %}
+                    {% for each in projects %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter}}</th>
+                        <td> <a href="{% url 'project_detail' each.pk %}"> {{ each.title }} </a>  </td>
+                        <td>{{ each.created_at }}</td>
+                        <td>{{ each.id }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
