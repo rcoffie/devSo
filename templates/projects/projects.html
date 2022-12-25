@@ -12,6 +12,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Title</th>
                         <th scope="col">Date</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,6 +22,10 @@
                         <th scope="row">{{ forloop.counter}}</th>
                         <td> <a class="text-decoration-none" href="{% url 'project_detail' each.pk %}"> {{ each.title }} </a>  </td>
                         <td>{{ each.created_at |naturaltime}}</td>
+                        <td>
+                            <a class="text-decoration-none" href="{% url 'update_project' each.id %}">Update</a>
+                            <a class="text-decoration-none text-danger" onclick="return confirm('Are you sure?')" href="{% url 'delete_project' each.id %}">Delete</a>
+                        </td>
                     </tr>
                     {% endfor %}
                     {% endif %}
