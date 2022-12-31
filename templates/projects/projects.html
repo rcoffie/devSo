@@ -3,36 +3,49 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 m-auto">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% if projects %}
-                    {% for each in projects %}
-                    <tr>
-                        <th scope="row">{{ forloop.counter}}</th>
-                        <td> <a class="text-decoration-none" href="{% url 'project_detail' each.pk %}"> {{ each.title }} </a>  </td>
-                        <td>{{ each.created_at |naturaltime}}</td>
-                        <td>
-                            <a class="text-decoration-none" href="{% url 'update_project' each.id %}">Update</a>
-                            <a class="text-decoration-none text-danger" onclick="return confirm('Are you sure?')" href="{% url 'delete_project' each.id %}">Delete</a>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                    {% endif %}
-                </tbody>
-            </table>
-
+<div class="container-fluid bg-dark text-light">
+    <div class="row ">
+        <div class="col-md-8 m-auto p-4 m-4">
+            <h3 class="text-center">Connect with <strong> Developers </strong> </h3>
+            <h3 class="text-center">From Around the world</h3>
+            <div class="input-group m-4 p-2">
+                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                    aria-describedby="search-addon" />
+                <button type="button" class="btn btn-outline-light">search</button>
+            </div>
         </div>
+    </div>
+</div>
+
+<div class="container">
+ 
+    <div class="row">
+        {% for each in projects %}
+        <div class="col-md-4 my-4">
+            <div class="card h-100">
+                <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" alt="Skyscrapers"/>
+                <div class="card-body">
+                  <h5 class="card-title"> <a class="text-decoration-none" href="{% url 'project_detail' each.id %}"> {{each.title}} </a> </h5>
+                  <small><a class="text-decoration-none text-info" href="">Username</a></small>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.
+                  </p>
+                  <span>
+                    {{each.ratio}}% Positive Feedback Ration {% if each.vote_total %} {{each.vote_total}} Vote{{each.vote_total|pluralize:"s"}} {%  endif %}
+                  </span>
+                </div>
+                <div class="">
+                    {% if each.tags %}
+                    {% for tag in each.tags.all %}
+                    <button type="button" class="btn btn-light btn-rounded text-info btn-sm mx-2">{{tag}}</button>
+                    {% endfor %}
+                    {% endif%}
+                   
+                </div>
+              </div>
+        </div>
+        {% endfor %}
     </div>
 </div>
 
