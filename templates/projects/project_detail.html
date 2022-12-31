@@ -1,9 +1,50 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
-    <div class="row">
-        <div class="col-md-10">
-            {{project_detail.title}}
+    <div class="row my-5">
+        <div class="col-md-3">
+            <h3>Tools and Tech Stack</h3>
+            <div>
+                {% for tag in project_detail.tags.all %}
+
+                <span class="bg-success my-2 mx-2  rounded ">
+                    <small class="text-light p-2">{{tag}}</small>
+                </span>
+                {% endfor %}
+            </div>
+
+            <div>
+                <span>
+                    {% if project_detail.source_link %}
+                    <small><button type="button" class="btn btn-link text-decoration-none">Source Link </button></small>
+                    {% endif %}
+                    {% if project_detail.demo_link %}
+                    <small><button type="button" class="btn btn-link text-decoration-none">Demo link</button></small>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="img-fluid .rounded"
+                alt="Wild Landscape" />
+            <p>Username</p>
+            <p class="bold h3">{{project_detail.title}}</p>
+            <div>
+                <h3>About Project</h3>
+                <p>{{project_detail.description}}</p>
+            </div>
+            <hr>
+            <div>
+                <h3 class="text-bold">Feedback </h3>
+                <div class="h4 font-weight-light">
+                    {% if project_detail.ratio %} 
+                    {{project_detail.ratio}}% Positive Feedback Ration 
+                    {% endif %} |
+                    {% if project_detail.vote_total %} 
+                    ({{project_detail.vote_total}}Vote{{project_detail.vote_total|pluralize:"s"}}) 
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </div>
 </div>
