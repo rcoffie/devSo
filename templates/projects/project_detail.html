@@ -37,11 +37,11 @@
             <div>
                 <h3 class="text-bold">Feedback </h3>
                 <div class="h4 font-weight-light">
-                    {% if project_detail.ratio %} 
-                    {{project_detail.ratio}}% Positive Feedback Ration 
+                    {% if project_detail.ratio %}
+                    {{project_detail.ratio}}% Positive Feedback Ration
                     {% endif %} |
-                    {% if project_detail.vote_total %} 
-                    ({{project_detail.vote_total}}Vote{{project_detail.vote_total|pluralize:"s"}}) 
+                    {% if project_detail.vote_total %}
+                    ({{project_detail.vote_total}}Vote{{project_detail.vote_total|pluralize:"s"}})
                     {% endif %}
                 </div>
             </div>
