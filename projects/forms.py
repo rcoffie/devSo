@@ -20,13 +20,17 @@ class ProjectForm(forms.ModelForm):
         )
 
         self.fields['description'].widget.attrs.update(
-            {'class': 'input', 'placeholder': 'Description (optional)'}
+            {'class': 'input', 'placeholder': 'Description (Optional)'}
         )
 
         self.fields['demo_link'].widget.attrs.update(
-            {'class': 'input', 'placeholder': 'link'}
+            {'class': 'input', 'placeholder': 'Demo link'}
         )
 
         self.fields['source_link'].widget.attrs.update(
-            {'class': 'input', 'placeholder': 'source link'}
+            {'class': 'form-control', 'placeholder': 'Source link'}
+        )
+
+        self.fields['tags'].widget.attrs.update(
+            {'class': 'form-select', }
         )
