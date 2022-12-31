@@ -38,7 +38,9 @@
                 <div class="">
                     {% if each.tags %}
                     {% for tag in each.tags.all %}
-                    <button type="button" class="btn btn-light btn-rounded text-info btn-sm mx-2">{{tag}}</button>
+                    <span class="bg-light my-2 mx-2   ">
+                        <small class="text-info p-2">{{tag}}</small>
+                    </span>
                     {% endfor %}
                     {% endif%}
                    
