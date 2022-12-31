@@ -20,7 +20,7 @@
     <div class="row my-4">
         {% if profiles %}
         {% for each in profiles %}
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="card mb-3">
                 <div class="row g-0">
                   <div class="col-md-4">
@@ -33,9 +33,12 @@
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title">{{each.user.username|title}}</h5>
+                      <hr>
                       <p class="card-text">
-                        This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.
+                       <small>
+                        {{each.short_intro|slice:"150" }}
+                       </small>
+                       {{each.bio|slice:"150"}}
                       </p>
                       <p class="card-text">
                         <small class="text-muted">Last updated 3 mins ago</small>
