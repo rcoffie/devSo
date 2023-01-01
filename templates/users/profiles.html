@@ -16,37 +16,37 @@
     </div>
 </div>
 <div class="container">
-   
+
     <div class="row my-4">
         {% if profiles %}
         {% for each in profiles %}
         <div class="col-md-4">
             <div class="card mb-3">
                 <div class="row g-0">
-                  <div class="col-md-4">
-                    <img
-                      src="{{ each.profile_image.url }}"
-                      alt="{{each.user.username}}"
-                      class="img-fluid rounded-circle m-2 border border-success border-2"
-                    />
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">{{each.user.username|title}}</h5>
-                      <hr>
-                      <p class="card-text">
-                       <small>
-                        {{each.short_intro|slice:"150" }}
-                       </small>
-                       {{each.bio|slice:"150"}}
-                      </p>
-                      <p class="card-text">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                      </p>
+                    <div class="col-md-4">
+                        <a class="text-decoration-none"href="{% url 'profile' each.id %}"> <img src="{{ each.profile_image.url }}"
+                                alt="{{each.user.username}}"
+                                class="img-fluid rounded-circle m-2 border border-success border-2" /> </a>
                     </div>
-                  </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                           <a class="text-decoration-none" href="{% url 'profile' each.id %}"> <h5 class="card-title">{{each.user.username|title}}</h5>
+                            <hr></a> 
+                            <p class="card-text">
+                                <small>
+                                    {{each.short_intro|slice:"150" }}
+                                </small>
+                                {{each.bio|slice:"150"}}
+                            </p>
+                            <p class="card-text">
+                                {% for skill in each.skill_set.all %}
+                                <small class="text-light bg-success p-1">{{skill.name}}</small>
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </div>
                 </div>
-              </div>
+            </div>
         </div>
         {% endfor %}
         {% endif %}

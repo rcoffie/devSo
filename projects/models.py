@@ -8,6 +8,8 @@ class Project(models.Model):
     owner = models.ForeignKey(
         Profile, null=True, blank=True, on_delete=models.SET_NULL)
     title = models.CharField(max_length=200)
+    featured_image = models.ImageField(
+        null=True, blank=True, upload_to='featured_image/', default="featured_image/def1.jpeg")
     description = models.TextField(blank=True, null=True)
     demo_link = models.CharField(max_length=200, null=True, blank=True)
     source_link = models.CharField(max_length=200, null=True, blank=True)
