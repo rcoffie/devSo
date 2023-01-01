@@ -26,6 +26,8 @@
 ## Update project model 
 - adding location field to the  model to know developer location 
 
+## Creating User profile details page for a single user
+
 ## Markdown examples and Reference 
 **how to create a strikethrough in markdown**
 ~~An example of strikethrough text~~  
