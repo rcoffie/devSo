@@ -16,17 +16,20 @@
     - create_at 
     - uuid 
 ##  Creating the Skill Model to the users project
-- creating the skill model 
-- add the below Fields 
+- ~~creating the skill model~~ 
+- ~~add the below Fields~~ 
     - owner
     - name 
     - description
     - created 
     - id
 ## Update project model 
-- adding location field to the  model to know developer location 
+- ~~adding location field to the  model to know developer location~~ 
 
 ## Creating User profile details page for a single user
+- ~~creating the profile view~~
+- ~~create a link to the profile view~~ 
+- ~~design the profile view~~ 
 
 ## Markdown examples and Reference 
 **how to create a strikethrough in markdown**
