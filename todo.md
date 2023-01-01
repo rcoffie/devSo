@@ -32,8 +32,9 @@
 - ~~design the profile view~~ 
 
 ## Tod list for 1-01-2022
-- add social links to social sections in user profile
-- Project feature image still not done
+- ~~add social links to social sections in user profile~~
+- ~~Project feature image still not done~~
+- create a signal for the profile model to add profile when a user is created 
 
 ## Markdown examples and Reference 
 **how to create a strikethrough in markdown**
