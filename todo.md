@@ -36,6 +36,11 @@
 - ~~Project feature image still not done~~
 - create a signal for the profile model to add profile when a user is created 
 
+## Todo list for 02-10-2022 
+- create login template plus login form 
+- create register template plus register from 
+  
+
 ## Markdown examples and Reference 
 **how to create a strikethrough in markdown**
 ~~An example of strikethrough text~~  
