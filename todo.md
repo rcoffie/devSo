@@ -37,7 +37,7 @@
 - create a signal for the profile model to add profile when a user is created 
 
 ## Todo list for 02-10-2022 
-- create login template plus login form 
+- ~~create login template plus login form~~ 
 - create register template plus register from 
 - add a login and logout button 
 - add authorization to authorize pages example profile 
