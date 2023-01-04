@@ -3,6 +3,7 @@ from users.models import Profile, Skill
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from users.forms import UserRegistrationForm
+from django.contrib.auth import logout 
 
 # Create your views here.
 
@@ -51,3 +52,12 @@ def user_registration(request):
     print('unsuccessful registration')
     form = UserRegistrationForm()
     return render(request, 'users/register.html',context={'registration_form':form})
+
+
+def user_logout(request):
+    logout(request)
+    print("user logged out successfully")
+    return redirect('projects')
+
+
+    
