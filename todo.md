@@ -38,7 +38,7 @@
 
 ## Todo list for 02-10-2022 
 - ~~create login template plus login form~~ 
-- create register template plus register from 
+- ~~create register template plus register from~~
 - add a login and logout button 
 - add authorization to authorize pages example profile 
 - start implementing flash messages 
