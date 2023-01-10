@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('projects', include('projects.urls')),
+    path('projects/', include('projects.urls')),
     path('', include('users.urls')),
     
     # django browser reload should always be at the buttom 
