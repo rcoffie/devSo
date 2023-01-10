@@ -35,7 +35,8 @@
                 <div class="card-body">
                     <h5 class="card-title"> <a class="text-decoration-none" href="{% url 'project_detail' each.id %}">
                             {{each.title}} </a> </h5>
-                    <small><a class="text-decoration-none text-info" href="#">By {{each.owner|title}}</a></small>
+                            {{each.owner.pk}}
+                    <small><a class="text-decoration-none text-info" href="/profile/{{each.owner.id}}">By {{each.owner|title}}</a></small>
                     <p class="card-text">
                         This is a wider card with supporting text below as a natural lead-in to
                         additional content. This content is a little bit longer.
