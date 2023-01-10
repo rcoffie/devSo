@@ -8,6 +8,9 @@
             <form action="" method="POST">
                 {% csrf_token%}
                 {{registration_form| crispy}}
+            {% for error in field.errors %}
+            {{error }}
+            {% endfor %}
                 <input type="submit" class="btn btn-primary" value="signup">
             </form>
         </div>
